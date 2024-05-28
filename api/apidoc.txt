@@ -1,0 +1,105 @@
+scheme::Todo
+attributes::username,email,password,first_name,last_name
+
+1) API for register new user
+
+url=http://127.0.0.1:8000/api/register/
+
+method=POST
+
+body={
+  "username":"jobin",
+  "email":"jobin@gmail.com",
+  "password":"jithin@123",
+  "first_name":"jobin",
+  "last_name":"joseph"
+}
+
+
+2) API for listing all task
+
+url=http://127.0.0.1:8000/api/todos/
+
+method=get
+
+body=Authentications must be provided
+
+    [username and password must required]
+
+
+3) API for create new task
+
+url=http://127.0.0.1:8000/api/todos/
+
+method=POST
+
+body=Authentications must be provided
+
+            and
+
+    {
+        "task_name":"shopping"
+        "task_description":"men's wear shopping"
+    }
+
+4)API for update task
+
+url=http://127.0.0.1:8000/api/todos/12/
+
+method=put
+
+body=Authentications must be provided
+
+            and
+
+    {
+        "task_name":"purchasing"
+        "task_description":"clothes purchase"
+    }
+
+
+4)API for update task
+
+url=http://127.0.0.1:8000/api/todos/12/
+
+method=put
+
+body=Authentications must be provided
+
+            and
+
+    {
+        "task_name":"purchasing"
+        "task_description":"clothes purchase"
+    }
+
+5)API for get a specific task(retrieve)
+
+url=http://127.0.0.1:8000/api/todos/12/
+
+method=get
+
+body=Authentications must be provided
+
+6) API for token generating
+
+url=http://127.0.0.1:8000/api/token/
+
+method=POST
+
+body=
+
+    username  jithin
+    password  jithin@123
+
+7)API for listing all task with ModelViewSetview
+
+url=http://127.0.0.1:8000/api/todomodel/
+
+method=get
+
+body= 
+   Authorization  Token 4e8aac4c23dea10af8c5517b9e7e050dabbe96b4
+
+    auth>>none
+

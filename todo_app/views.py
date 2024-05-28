@@ -79,6 +79,22 @@ class Update_user(View):
 
         return render (request,"register.html",{"form":form})
     
+    def post(self,request,**kwargs):
+
+        id=kwargs.get("pk")
+
+        data=User.objects.get(id=id)
+
+        form=Register(request.POST,instance=data)
+
+        if form.is_valid():
+
+            User.objects.create_user(**form.cleaned_data)
+
+        return redirect("signin")
+    
+        
+
     
 class Sign_in(View):
 
@@ -186,3 +202,14 @@ class Sign_out(View):
         logout(request)
 
         return redirect("signin")    
+    
+class User_del(View):
+
+    def get(self,request,**kwargs):
+
+        id=kwargs.get("pk")
+
+        User.objects.get(id=id).delete()
+
+        return redirect("index")
+
